@@ -97,6 +97,21 @@ public ResponseEntity<List<Customer>>getAllDisburseCustomer(){
 		return new ResponseEntity<List<Customer>>(HttpStatus.BAD_REQUEST);
 	}
 }
+
+
+@GetMapping("/getAllCustomerByLoanPaid")
+public ResponseEntity<List<Customer>> getAllCustomerByLoanPaid() {
+	List<Customer>list = cs.getAllCustomerByLoanPaid();
+	if(!list.isEmpty()) {
+		log.info("Getting all Loan paid status customer sucessfully");
+		return new ResponseEntity<List<Customer>>(list,HttpStatus.OK);
+	}
+	else {
+		log.error("Getting all loan paid status customer failed");
+		return new ResponseEntity<List<Customer>>(HttpStatus.BAD_REQUEST);
+	}
+	
+}
 	
 	
 }

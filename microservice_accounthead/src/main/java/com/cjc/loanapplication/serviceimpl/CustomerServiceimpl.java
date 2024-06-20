@@ -131,5 +131,16 @@ public List<Customer> getAllDisburseCustomer() {
 	}
 }
 
+@Override
+public List<Customer> getAllCustomerByLoanPaid() {
+	List<Customer>list=cr.findAllByStatus("LoanPaid");
+	if(!list.isEmpty()) {
+		return list;
+	}
+	else {
+		throw new ResourseNotFoundException("No any customer found with status Accept");
+	}
+}
+
 
 }

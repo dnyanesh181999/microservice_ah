@@ -16,5 +16,7 @@ public interface CustomerServicei {
 
 	public List<Customer> getAllDisburseCustomer();
 
+	public List<Customer> getAllCustomerByLoanPaid();
+
 
 }
